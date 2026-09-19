@@ -1,0 +1,19 @@
+exit 1
+
+PASS: BENCH_PLAN.md present and still defines all 7 plan strategies
+PASS: bench.py exists at /private/tmp/ddc0f4d0/fusion-harness/bench.py
+PASS: bench.py has a PEP 723 `# /// script` metadata block
+PASS: PEP 723 dependencies are empty (stdlib only)
+PASS: bench.py imports only Python standard library modules
+PASS: bench.py uses sqlite3 (real inserts, not simulated)
+PASS: bench.py isolates strategies in separate processes
+PASS: bench.py measures peak RAM via getrusage/ru_maxrss
+PASS: bench.py targets N=1,000,000 rows
+PASS: `uv run bench.py` ran to completion (exit 0)
+PASS: RESULTS.md was (re)written by this `uv run bench.py` invocation
+FAIL: expected a markdown table whose rows name the 7 plan strategies ['naive_autocommit', 'one_big_txn_loop', 'executemany_list', 'executemany_gen', 'wal_tuned_gen', 'max_tuned_gen', 'set_based_ctes'], found no such table, at /private/tmp/ddc0f4d0/fusion-harness/RESULTS.md — write one markdown table with one row per strategy using the plan's strategy names
+FAIL: expected a `Speed Winner:` line naming one plan strategy, found `Speed Winner: setbasedctes — 0.1731 s, 1459.70x faster than naive.`, at /private/tmp/ddc0f4d0/fusion-harness/RESULTS.md — declare the Speed Winner using the plan's strategy name
+FAIL: expected a `Memory Winner:` line naming one plan strategy, found `Memory Winner: waltunedgen — 25.657 MB peak RSS, +3.375 MB over the calibration worker.`, at /private/tmp/ddc0f4d0/fusion-harness/RESULTS.md — declare the Memory Winner using the plan's strategy name
+FAIL: expected complete measured times for all 7 strategies to verify the >=5x speedup, found only [] parseable, at /private/tmp/ddc0f4d0/fusion-harness/RESULTS.md — fix the results table first
+
+RESULT: RED (11 passed, 4 failed)

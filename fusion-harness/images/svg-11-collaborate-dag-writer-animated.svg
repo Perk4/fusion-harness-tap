@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family='ui-monospace, "SF Mono", Menlo, Monaco, monospace'>
+  <style>
+    :root { }
+    .title { fill:#eef1f6; font-size:56px; font-weight:700; letter-spacing:1px; }
+    .legendTxt { fill:#eef1f6; font-size:28px; font-weight:700; letter-spacing:2px; }
+    .nodeId { fill:#eef1f6; font-size:46px; font-weight:700; }
+    .roleTxt { font-size:22px; font-weight:700; letter-spacing:3px; }
+    .check { fill:#3FBF6F; font-size:40px; font-weight:700; }
+
+    .edgeBase { fill:none; stroke:#1b212c; stroke-width:4; }
+    .edgeLit  { fill:none; stroke:#3FBF6F; stroke-width:5; stroke-linecap:round;
+                stroke-dasharray:1; stroke-dashoffset:1; }
+    .node { stroke-width:4; }
+    .halo { fill:none; stroke-width:10; opacity:0; }
+
+    /* ---------- wave 1: read 1.b completes FIRST, then writer 1.a runs ---------- */
+    /* (the harness runs every read task of a wave to completion, THEN writes FIFO) */
+    @keyframes n1a {
+      0%,14%  { stroke:#1b212c; fill:#0d1016; }
+      17%,27% { stroke:#F59E0B; fill:#1a1408; }
+      31%,92% { stroke:#3FBF6F; fill:#0b1810; }
+      100%    { stroke:#1b212c; fill:#0d1016; }
+    }
+    @keyframes n1b {
+      0%,3%   { stroke:#1b212c; fill:#0d1016; }
+      6%,13%  { stroke:#22D3EE; fill:#081a1e; }
+      16%,92% { stroke:#3FBF6F; fill:#0b1810; }
+      100%    { stroke:#1b212c; fill:#0d1016; }
+    }
+    /* ---------- wave 2 node (2.a violet writer) ---------- */
+    @keyframes n2a {
+      0%,36%  { stroke:#1b212c; fill:#0d1016; }
+      39%,57% { stroke:#A78BFA; fill:#141021; }
+      61%,92% { stroke:#3FBF6F; fill:#0b1810; }
+      100%    { stroke:#1b212c; fill:#0d1016; }
+    }
+    /* ---------- wave 3: read 3.b completes FIRST, then writer 3.a runs ---------- */
+    @keyframes n3a {
+      0%,74%  { stroke:#1b212c; fill:#0d1016; }
+      77%,85% { stroke:#22D3EE; fill:#081a1e; }
+      88%,92% { stroke:#3FBF6F; fill:#0b1810; }
+      100%    { stroke:#1b212c; fill:#0d1016; }
+    }
+    @keyframes n3b {
+      0%,62%  { stroke:#1b212c; fill:#0d1016; }
+      65%,73% { stroke:#F59E0B; fill:#1a1408; }
+      76%,92% { stroke:#3FBF6F; fill:#0b1810; }
+      100%    { stroke:#1b212c; fill:#0d1016; }
+    }
+
+    /* ---------- active halos (pulse while node runs) ---------- */
+    @keyframes halo1a {
+      0%,16%{opacity:0} 19%{opacity:.4} 22%{opacity:.08} 25%{opacity:.4}
+      28%{opacity:.3} 31%,100%{opacity:0}
+    }
+    @keyframes halo1b {
+      0%,4%{opacity:0} 7%{opacity:.4} 10%{opacity:.08} 13%{opacity:.4}
+      15%{opacity:.3} 17%,100%{opacity:0}
+    }
+    @keyframes halo2 {
+      0%,38%{opacity:0} 42%{opacity:.4} 46%{opacity:.08} 50%{opacity:.4}
+      54%{opacity:.08} 57%{opacity:.3} 60%,100%{opacity:0}
+    }
+    @keyframes halo3a {
+      0%,76%{opacity:0} 79%{opacity:.4} 81%{opacity:.08} 83%{opacity:.4}
+      85%{opacity:.3} 88%,100%{opacity:0}
+    }
+    @keyframes halo3b {
+      0%,64%{opacity:0} 67%{opacity:.4} 69%{opacity:.08} 71%{opacity:.4}
+      73%{opacity:.3} 76%,100%{opacity:0}
+    }
+
+    /* ---------- done checkmarks ---------- */
+    @keyframes done1a { 0%,29%{opacity:0} 33%,92%{opacity:1} 97%,100%{opacity:0} }
+    @keyframes done1b { 0%,15%{opacity:0} 18%,92%{opacity:1} 97%,100%{opacity:0} }
+    @keyframes done2  { 0%,59%{opacity:0} 63%,92%{opacity:1} 97%,100%{opacity:0} }
+    @keyframes done3a { 0%,86%{opacity:0} 89%,92%{opacity:1} 97%,100%{opacity:0} }
+    @keyframes done3b { 0%,74%{opacity:0} 77%,92%{opacity:1} 97%,100%{opacity:0} }
+
+    /* ---------- edges light up when dependency satisfied ---------- */
+    @keyframes drawA {
+      0%,29%{stroke-dashoffset:1; opacity:1} 36%{stroke-dashoffset:0}
+      93%{stroke-dashoffset:0; opacity:1} 96%{stroke-dashoffset:0; opacity:0}
+      97%{stroke-dashoffset:1; opacity:0} 100%{stroke-dashoffset:1; opacity:1}
+    }
+    @keyframes drawB {
+      0%,59%{stroke-dashoffset:1; opacity:1} 66%{stroke-dashoffset:0}
+      93%{stroke-dashoffset:0; opacity:1} 96%{stroke-dashoffset:0; opacity:0}
+      97%{stroke-dashoffset:1; opacity:0} 100%{stroke-dashoffset:1; opacity:1}
+    }
+
+    /* ---------- writer token: appears only while a WRITE runs, hops 1.a -> 2.a -> 3.a ---------- */
+    /* (read tasks never hold the token — it idles at the last writer while 3.b reads) */
+    @keyframes tok {
+      0%   { transform:translate(550px,315px); opacity:0; }
+      15%  { transform:translate(550px,315px); opacity:0; }
+      17%  { transform:translate(550px,315px); opacity:1; }
+      31%  { transform:translate(550px,315px); opacity:1; }
+      34%  { transform:translate(820px,350px); }
+      37%  { transform:translate(1050px,485px); }
+      73%  { transform:translate(1050px,485px); }
+      75%  { transform:translate(1320px,350px); }
+      77%  { transform:translate(1550px,315px); }
+      91%  { transform:translate(1550px,315px); opacity:1; }
+      94%  { transform:translate(1550px,315px); opacity:0; }
+      100% { transform:translate(550px,315px); opacity:0; }
+    }
+    @keyframes tpulse {
+      0%,100% { transform:scale(1); }
+      50%     { transform:scale(1.14); }
+    }
+
+    .a-n1a  { animation:n1a 8s linear infinite; }
+    .a-n1b  { animation:n1b 8s linear infinite; }
+    .a-n2a  { animation:n2a 8s linear infinite; }
+    .a-n3a  { animation:n3a 8s linear infinite; }
+    .a-n3b  { animation:n3b 8s linear infinite; }
+    .a-h1a  { animation:halo1a 8s linear infinite; }
+    .a-h1b  { animation:halo1b 8s linear infinite; }
+    .a-h2   { animation:halo2 8s linear infinite; }
+    .a-h3a  { animation:halo3a 8s linear infinite; }
+    .a-h3b  { animation:halo3b 8s linear infinite; }
+    .a-d1a  { animation:done1a 8s linear infinite; }
+    .a-d1b  { animation:done1b 8s linear infinite; }
+    .a-d2   { animation:done2 8s linear infinite; }
+    .a-d3a  { animation:done3a 8s linear infinite; }
+    .a-d3b  { animation:done3b 8s linear infinite; }
+    .a-eA   { animation:drawA 8s linear infinite; }
+    .a-eB   { animation:drawB 8s linear infinite; }
+    .a-tok  { animation:tok 8s ease-in-out infinite; }
+    .a-tp   { animation:tpulse 1.6s ease-in-out infinite; }
+  </style>
+
+  <defs>
+    <!-- pen glyph (writer) -->
+    <g id="pen">
+      <path d="M-11 11 L-8 3 L6 -11 L11 -6 L-3 8 Z" fill="currentColor"/>
+    </g>
+    <!-- eye glyph (read-only) -->
+    <g id="eye">
+      <path d="M-14 0 Q0 -11 14 0 Q0 11 -14 0 Z" fill="none" stroke="currentColor" stroke-width="3.5"/>
+      <circle r="4" fill="currentColor"/>
+    </g>
+  </defs>
+
+  <!-- background -->
+  <rect width="1920" height="1080" fill="#08090d"/>
+
+  <!-- title -->
+  <text x="80" y="112" class="title">/fh-collaborate</text>
+
+  <!-- legend: one writer token -->
+  <g>
+    <circle cx="1568" cy="96" r="15" fill="none" stroke="#eef1f6" stroke-width="5"/>
+    <text x="1604" y="107" class="legendTxt">1 WRITER</text>
+  </g>
+
+  <!-- base dependency edges -->
+  <path class="edgeBase" d="M550 380 C 690 380, 680 550, 810 550"/>
+  <path class="edgeBase" d="M550 720 C 690 720, 680 550, 810 550"/>
+  <path class="edgeBase" d="M1050 550 C 1180 550, 1170 380, 1310 380"/>
+  <path class="edgeBase" d="M1050 550 C 1180 550, 1170 720, 1310 720"/>
+
+  <!-- satisfied edges (light green in sequence) -->
+  <path class="edgeLit a-eA" pathLength="1" d="M550 380 C 690 380, 680 550, 810 550"/>
+  <path class="edgeLit a-eA" pathLength="1" d="M550 720 C 690 720, 680 550, 810 550"/>
+  <path class="edgeLit a-eB" pathLength="1" d="M1050 550 C 1180 550, 1170 380, 1310 380"/>
+  <path class="edgeLit a-eB" pathLength="1" d="M1050 550 C 1180 550, 1170 720, 1310 720"/>
+
+  <!-- ================= node 1a : amber WRITER ================= -->
+  <g>
+    <rect class="halo a-h1a" x="302" y="307" width="256" height="146" rx="24" stroke="#F59E0B"/>
+    <rect class="node a-n1a" x="310" y="315" width="240" height="130" rx="18"/>
+    <text x="340" y="382" class="nodeId">1.a</text>
+    <text x="340" y="420" class="roleTxt" fill="#F59E0B">WRITE</text>
+    <use href="#pen" x="495" y="370" color="#F59E0B"/>
+    <text x="472" y="435" class="check a-d1a">&#10003;</text>
+  </g>
+
+  <!-- ================= node 1b : cyan READ ================= -->
+  <g>
+    <rect class="halo a-h1b" x="302" y="647" width="256" height="146" rx="24" stroke="#22D3EE"/>
+    <rect class="node a-n1b" x="310" y="655" width="240" height="130" rx="18"/>
+    <text x="340" y="722" class="nodeId">1.b</text>
+    <text x="340" y="760" class="roleTxt" fill="#22D3EE">READ</text>
+    <use href="#eye" x="495" y="710" color="#22D3EE"/>
+    <text x="472" y="775" class="check a-d1b">&#10003;</text>
+  </g>
+
+  <!-- ================= node 2a : violet WRITER ================= -->
+  <g>
+    <rect class="halo a-h2" x="802" y="477" width="256" height="146" rx="24" stroke="#A78BFA"/>
+    <rect class="node a-n2a" x="810" y="485" width="240" height="130" rx="18"/>
+    <text x="840" y="552" class="nodeId">2.a</text>
+    <text x="840" y="590" class="roleTxt" fill="#A78BFA">WRITE</text>
+    <use href="#pen" x="995" y="540" color="#A78BFA"/>
+    <text x="972" y="605" class="check a-d2">&#10003;</text>
+  </g>
+
+  <!-- ================= node 3a : cyan WRITER ================= -->
+  <g>
+    <rect class="halo a-h3a" x="1302" y="307" width="256" height="146" rx="24" stroke="#22D3EE"/>
+    <rect class="node a-n3a" x="1310" y="315" width="240" height="130" rx="18"/>
+    <text x="1340" y="382" class="nodeId">3.a</text>
+    <text x="1340" y="420" class="roleTxt" fill="#22D3EE">WRITE</text>
+    <use href="#pen" x="1495" y="370" color="#22D3EE"/>
+    <text x="1472" y="435" class="check a-d3a">&#10003;</text>
+  </g>
+
+  <!-- ================= node 3b : amber READ ================= -->
+  <g>
+    <rect class="halo a-h3b" x="1302" y="647" width="256" height="146" rx="24" stroke="#F59E0B"/>
+    <rect class="node a-n3b" x="1310" y="655" width="240" height="130" rx="18"/>
+    <text x="1340" y="722" class="nodeId">3.b</text>
+    <text x="1340" y="760" class="roleTxt" fill="#F59E0B">READ</text>
+    <use href="#eye" x="1495" y="710" color="#F59E0B"/>
+    <text x="1472" y="775" class="check a-d3b">&#10003;</text>
+  </g>
+
+  <!-- ================= writer token (white ring, hops FIFO) ================= -->
+  <g class="a-tok">
+    <g class="a-tp">
+      <circle r="34" fill="#eef1f6" opacity="0.12"/>
+      <circle r="21" fill="#08090d" stroke="#eef1f6" stroke-width="5"/>
+      <use href="#pen" color="#eef1f6" transform="scale(0.8)"/>
+    </g>
+  </g>
+</svg>

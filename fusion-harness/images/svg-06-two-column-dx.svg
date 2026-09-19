@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" role="img" aria-label="Two-column terminal DX: architect column left, builder column right, a full-width fusion row, and an aligned two-cell footer with thinking level and context bars">
+  <rect x="0" y="0" width="800" height="440" rx="14" fill="#0d1117"/>
+  <rect x="0.75" y="0.75" width="798.5" height="438.5" rx="13.5" fill="none" stroke="#30363d" stroke-width="1.5"/>
+
+  <!-- terminal window -->
+  <rect x="30" y="26" width="740" height="366" rx="10" fill="#010409" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="52" cy="46" r="5" fill="#f85149"/>
+  <circle cx="70" cy="46" r="5" fill="#f0b429"/>
+  <circle cx="88" cy="46" r="5" fill="#3fb950"/>
+  <text x="400" y="50" text-anchor="middle" fill="#484f58" font-size="11">pi &#183; fusion-harness</text>
+
+  <!-- column headers -->
+  <text x="50" y="86" fill="#a78bfa" font-size="12" font-weight="700">&#9670; ARCHITECT &#183; claude-fable-5</text>
+  <text x="410" y="86" fill="#f0b429" font-size="12" font-weight="700">&#9650; BUILDER &#183; gpt-5.6-sol</text>
+
+  <!-- column divider -->
+  <line x1="400" y1="96" x2="400" y2="226" stroke="#21262d" stroke-width="1.5"/>
+
+  <!-- architect column: tool lines + text bars -->
+  <g>
+    <rect x="50" y="100" width="8" height="8" rx="2" fill="#a78bfa"/>
+    <rect x="66" y="101" width="200" height="6" rx="3" fill="#30363d"/>
+    <rect x="50" y="118" width="300" height="6" rx="3" fill="#21262d"/>
+    <rect x="50" y="134" width="270" height="6" rx="3" fill="#21262d"/>
+    <rect x="50" y="150" width="310" height="6" rx="3" fill="#21262d"/>
+    <rect x="50" y="170" width="8" height="8" rx="2" fill="#a78bfa"/>
+    <rect x="66" y="171" width="160" height="6" rx="3" fill="#30363d"/>
+    <rect x="50" y="188" width="290" height="6" rx="3" fill="#21262d"/>
+    <rect x="50" y="204" width="230" height="6" rx="3" fill="#21262d"/>
+  </g>
+
+  <!-- builder column: tool lines + text bars -->
+  <g>
+    <rect x="410" y="100" width="8" height="8" rx="2" fill="#f0b429"/>
+    <rect x="426" y="101" width="230" height="6" rx="3" fill="#30363d"/>
+    <rect x="410" y="118" width="310" height="6" rx="3" fill="#21262d"/>
+    <rect x="410" y="134" width="250" height="6" rx="3" fill="#21262d"/>
+    <rect x="410" y="152" width="8" height="8" rx="2" fill="#f0b429"/>
+    <rect x="426" y="153" width="180" height="6" rx="3" fill="#30363d"/>
+    <rect x="410" y="170" width="330" height="6" rx="3" fill="#21262d"/>
+    <rect x="410" y="188" width="300" height="6" rx="3" fill="#21262d"/>
+    <rect x="410" y="204" width="190" height="6" rx="3" fill="#21262d"/>
+  </g>
+
+  <!-- full-width fusion row -->
+  <rect x="50" y="240" width="700" height="74" rx="8" fill="#0f1a1e" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="66" y="264" fill="#22d3ee" font-size="12" font-weight="700">&#10697; FUSION &#183; full-width row</text>
+  <rect x="66" y="278" width="560" height="6" rx="3" fill="#173b44"/>
+  <rect x="66" y="294" width="640" height="6" rx="3" fill="#173b44"/>
+
+  <!-- scrollback note -->
+  <text x="400" y="336" text-anchor="middle" fill="#484f58" font-size="10">panels render full-height into scrollback &#8212; no lines hidden behind a toggle</text>
+
+  <!-- footer: two aligned cells -->
+  <rect x="30" y="352" width="740" height="40" rx="0" fill="#0d1117"/>
+  <line x1="30" y1="352" x2="770" y2="352" stroke="#30363d" stroke-width="1.5"/>
+  <text x="50" y="377" fill="#a78bfa" font-size="12">&#9670; ARCHITECT | fable-5 (med) | [&#9608;&#9608;--------] 12%</text>
+  <text x="410" y="377" fill="#f0b429" font-size="12">&#9650; BUILDER | gpt-5.6-sol (med) | [&#9608;&#9608;&#9608;-------] 31%</text>
+
+  <text x="400" y="422" text-anchor="middle" fill="#8b949e" font-size="12">ARCHITECT-family left &#183; BUILDER right &#8212; live widget, final panels, footer, all aligned</text>
+</svg>

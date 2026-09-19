@@ -1,0 +1,49 @@
+# --- Secrets / env ---
+# .env holds real API keys (ANTHROPIC, SERPAPI, DATAFORSEO, GITHUB_TOKEN, etc.)
+.env
+.env.*
+!.env.example
+!.env.template
+
+# --- Node / TypeScript ---
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# --- Python (uv gates, bench scripts) ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# --- Runtime artifacts ---
+# Harness children write to /tmp/fusion-harness-* (outside the repo), but guard
+# against any stray local run output landing here.
+*.log
+/tmp-artifacts/
+
+# Local parking lot for unused assets and scratch files — never committed.
+/tmp/
+
+# --- Editors / OS ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+.idea/
+*.swp
+*.swo
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json

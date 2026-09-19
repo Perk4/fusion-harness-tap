@@ -1,0 +1,16 @@
+- name: fable
+  model: anthropic/claude-fable-5
+  thinking: medium
+  architect: true
+  color: "#A78BFA"
+
+- name: sol
+  model: openai/gpt-5.6-sol
+  thinking: medium
+  primary: true
+  color: "#F59E0B"
+
+- name: terra
+  model: openai/gpt-5.6-terra
+  thinking: medium
+  color: "#22D3EE"

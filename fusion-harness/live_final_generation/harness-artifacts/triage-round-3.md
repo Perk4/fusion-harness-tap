@@ -1,0 +1,11 @@
+**Diagnosis** — `GATE DEFECT:` The builder's work is correct and complete; the gate can never pass it. `gate.py:61` defines `clean_md(s) = re.sub(r"[`*_]", "", s)` — intended to strip markdown emphasis, it also deletes every underscore from the text being searched. All 7 required strategy names contain underscores, so `"set_based_ctes" in clean_md(...)` is mathematically unsatisfiable for any possible RESULTS.md (the gate's own round-2/3 output proves it: it echoes `setbasedctes` / `waltunedgen` — mangled by the gate, not written that way). This single line causes all four FAILs (table match count 0 → "no such table", both winner-name checks, empty parsed times → 5x check). I verified the real state: `/private/tmp/ddc0f4d0/fusion-harness/RESULTS.md` contains a well-formed table with all 7 exact plan names, positive measured times and peak-RAM figures, a Speed Winner (`set_based_ctes`, 0.1768s = table minimum), a Memory Winner (`wal_tuned_gen`, 25.657 MB = minimum among full-1M rows, baseline excluded), and a 2030x speedup vs naive — every substantive requirement is already met. The builder's round-3 report is accurate; rounds 2–3 are identical because there is nothing left for the builder to fix.
+
+**Do exactly this**
+1. **HUMAN/HARNESS (not builder):** patch `/tmp/fusion-harness-K48sbW/gate.py` line 61 from `return re.sub(r"[`*_]", "", s)` to `return re.sub(r"[`*]", "", s)`. Underscores must survive cleaning; backtick/asterisk stripping stays. No other gate change is needed.
+2. **BUILDER:** change nothing. Leave `/private/tmp/ddc0f4d0/fusion-harness/bench.py` and `RESULTS.md` exactly as they are — they satisfy every check once matching works (RESULTS.md is regenerated fresh each run, so mtime/consistency checks will pass).
+3. Re-run the gate once the patch lands; expect GREEN.
+
+**Do NOT**
+- Do NOT rename strategies to underscore-free variants (e.g., `setbasedctes`) or strip underscores/backticks in RESULTS.md to appease the broken matcher — that diverges from BENCH_PLAN.md's canonical names and is gate-gaming.
+- Do NOT let the builder edit `/tmp/fusion-harness-K48sbW/gate.py` itself; the fix is the human's call, flagged here.
+- Do NOT burn rounds 4–5 re-running the unmodified gate against unmodified files — the failure is deterministic until line 61 is patched.
