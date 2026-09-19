@@ -1,0 +1,10 @@
+{
+  "name": "fusion-harness-tap",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm test --prefix fusion-harness && bun test examples/four-primitives",
+    "test:fusion-harness": "npm test --prefix fusion-harness",
+    "test:example": "bun test examples/four-primitives"
+  }
+}
