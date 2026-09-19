@@ -1,0 +1,13 @@
+{
+  "name": "fusion-harness",
+  "private": true,
+  "type": "module",
+  "description": "A composable Pi extension that fuses 2-5 configured models with N-way opinion, fusion, debate, and single-writer collaboration.",
+  "scripts": {
+    "test": "bun test extensions/fusion-harness/tests",
+    "test:fusion-harness": "bun test extensions/fusion-harness/tests"
+  },
+  "dependencies": {
+    "yaml": "^2.9.0"
+  }
+}

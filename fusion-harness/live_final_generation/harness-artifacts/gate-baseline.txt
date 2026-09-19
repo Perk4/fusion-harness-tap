@@ -1,0 +1,6 @@
+exit 1
+
+PASS: BENCH_PLAN.md present and still defines all 7 plan strategies
+FAIL: expected bench.py to exist, found nothing, at /private/tmp/ddc0f4d0/fusion-harness/bench.py — implement BENCH_PLAN.md as a single-file uv script named bench.py in /private/tmp/ddc0f4d0/fusion-harness (stdlib only, runnable with `uv run bench.py`)
+
+RESULT: RED (gate cannot proceed without bench.py)

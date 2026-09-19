@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family='ui-monospace, "SF Mono", Menlo, Monaco, monospace'>
+  <style>
+    :root { }
+    .line { transform-box: fill-box; transform-origin: left center; opacity: 0; }
+    .ol1 { animation: ol1 9s linear infinite; }
+    .ol2 { animation: ol2 9s linear infinite; }
+    .ol3 { animation: ol3 9s linear infinite; }
+    .rl1 { animation: rl1 9s linear infinite; }
+    .rl2 { animation: rl2 9s linear infinite; }
+    .rl3 { animation: rl3 9s linear infinite; }
+    .cl1 { animation: cl1 9s linear infinite; }
+    .cl2 { animation: cl2 9s linear infinite; }
+    .cl3 { animation: cl3 9s linear infinite; }
+    .ocard { opacity: 0; animation: ocard 9s linear infinite; }
+    .rcard { opacity: 0; animation: rcard 9s linear infinite; }
+    .ccard { opacity: 0; animation: ccard 9s linear infinite; }
+    .arrow { stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0; animation: arrow 9s linear infinite; }
+    .ahead { opacity: 0; animation: ahead 9s linear infinite; }
+    .tick1 { opacity: 0; animation: tick1 9s linear infinite; }
+    .tick2 { opacity: 0; animation: tick2 9s linear infinite; }
+    .tick3 { opacity: 0; animation: tick3 9s linear infinite; }
+
+    @keyframes ol1 { 0%,6% {opacity:0; transform:scaleX(.2);} 9% {opacity:1; transform:scaleX(1);} 93% {opacity:1;} 97%,100% {opacity:0; transform:scaleX(1);} }
+    @keyframes ol2 { 0%,9% {opacity:0; transform:scaleX(.2);} 12% {opacity:1; transform:scaleX(1);} 93% {opacity:1;} 97%,100% {opacity:0; transform:scaleX(1);} }
+    @keyframes ol3 { 0%,12% {opacity:0; transform:scaleX(.2);} 15% {opacity:1; transform:scaleX(1);} 93% {opacity:1;} 97%,100% {opacity:0; transform:scaleX(1);} }
+    @keyframes ocard { 0%,4% {opacity:0;} 7% {opacity:1;} 93% {opacity:1;} 97%,100% {opacity:0;} }
+
+    @keyframes arrow { 0%,25% {stroke-dashoffset:100; opacity:0;} 26% {opacity:1; stroke-dashoffset:100;} 38% {stroke-dashoffset:0; opacity:1;} 46% {opacity:1;} 52% {opacity:.45;} 93% {opacity:.45; stroke-dashoffset:0;} 97%,100% {opacity:0; stroke-dashoffset:0;} }
+    @keyframes ahead { 0%,36% {opacity:0;} 39% {opacity:1;} 46% {opacity:1;} 52% {opacity:.45;} 93% {opacity:.45;} 97%,100% {opacity:0;} }
+
+    @keyframes rcard { 0%,39% {opacity:0;} 42% {opacity:1;} 93% {opacity:1;} 97%,100% {opacity:0;} }
+    @keyframes rl1 { 0%,42% {opacity:0; transform:scaleX(.2);} 45% {opacity:1; transform:scaleX(1);} 93% {opacity:1;} 97%,100% {opacity:0; transform:scaleX(1);} }
+    @keyframes rl2 { 0%,45% {opacity:0; transform:scaleX(.2);} 48% {opacity:1; transform:scaleX(1);} 93% {opacity:1;} 97%,100% {opacity:0; transform:scaleX(1);} }
+    @keyframes rl3 { 0%,48% {opacity:0; transform:scaleX(.2);} 51% {opacity:1; transform:scaleX(1);} 93% {opacity:1;} 97%,100% {opacity:0; transform:scaleX(1);} }
+
+    @keyframes ccard { 0%,57% {opacity:0;} 60% {opacity:1;} 93% {opacity:1;} 97%,100% {opacity:0;} }
+    @keyframes cl1 { 0%,60% {opacity:0; transform:scaleX(.2);} 63% {opacity:1; transform:scaleX(1);} 93% {opacity:1;} 97%,100% {opacity:0; transform:scaleX(1);} }
+    @keyframes cl2 { 0%,63% {opacity:0; transform:scaleX(.2);} 66% {opacity:1; transform:scaleX(1);} 93% {opacity:1;} 97%,100% {opacity:0; transform:scaleX(1);} }
+    @keyframes cl3 { 0%,66% {opacity:0; transform:scaleX(.2);} 69% {opacity:1; transform:scaleX(1);} 93% {opacity:1;} 97%,100% {opacity:0; transform:scaleX(1);} }
+
+    @keyframes tick1 { 0%,4% {opacity:0;} 6% {opacity:1;} 40% {opacity:1;} 44% {opacity:.3;} 93% {opacity:.3;} 97%,100% {opacity:0;} }
+    @keyframes tick2 { 0%,25% {opacity:0;} 27% {opacity:1;} 58% {opacity:1;} 62% {opacity:.3;} 93% {opacity:.3;} 97%,100% {opacity:0;} }
+    @keyframes tick3 { 0%,56% {opacity:0;} 59% {opacity:1;} 93% {opacity:1;} 97%,100% {opacity:0;} }
+  </style>
+
+  <!-- background -->
+  <rect width="1920" height="1080" fill="#08090d"/>
+
+  <!-- title -->
+  <text x="80" y="104" font-size="52" font-weight="700" fill="#eef1f6">/fh-debate</text>
+
+  <!-- ================= column headers ================= -->
+  <g font-size="27" font-weight="700" text-anchor="middle">
+    <rect x="480" y="152" width="280" height="56" rx="12" fill="#0d1016" stroke="#F59E0B" stroke-width="3"/>
+    <text x="620" y="189" fill="#F59E0B">&#9650; MAIN</text>
+    <rect x="980" y="152" width="280" height="56" rx="12" fill="#0d1016" stroke="#22D3EE" stroke-width="3"/>
+    <text x="1120" y="189" fill="#22D3EE">&#9679; BUILDER</text>
+    <rect x="1480" y="152" width="280" height="56" rx="12" fill="#0d1016" stroke="#A78BFA" stroke-width="3"/>
+    <text x="1620" y="189" fill="#A78BFA">&#9670; ARCHITECT</text>
+  </g>
+
+  <!-- ================= round labels (left rail) ================= -->
+  <g font-size="30" font-weight="700" fill="#eef1f6">
+    <text x="100" y="332">OPENING</text>
+    <rect class="tick1" x="100" y="348" width="150" height="6" rx="3" fill="#38bdf8"/>
+    <text x="100" y="642">REBUTTAL</text>
+    <rect class="tick2" x="100" y="658" width="150" height="6" rx="3" fill="#38bdf8"/>
+    <text x="100" y="862">CLOSING</text>
+    <rect class="tick3" x="100" y="878" width="150" height="6" rx="3" fill="#38bdf8"/>
+  </g>
+
+  <!-- faint band hairlines -->
+  <g stroke="#1b212c" stroke-width="2">
+    <line x1="80" y1="236" x2="1840" y2="236"/>
+    <line x1="80" y1="546" x2="1840" y2="546"/>
+    <line x1="80" y1="766" x2="1840" y2="766"/>
+  </g>
+
+  <!-- ================= OPENING cards (y=250..430) ================= -->
+  <!-- col1 amber -->
+  <g>
+    <rect x="400" y="250" width="440" height="180" rx="14" fill="#0f131a" stroke="#1b212c" stroke-width="2"/>
+    <rect class="ocard" x="400" y="250" width="440" height="180" rx="14" fill="none" stroke="#F59E0B" stroke-width="3.5"/>
+    <g stroke="#F59E0B" stroke-width="2.5" fill="none">
+      <path d="M 782 282 C 790 271, 806 271, 814 282 C 806 293, 790 293, 782 282 Z"/>
+      <circle cx="798" cy="282" r="4" fill="#F59E0B" stroke="none"/>
+    </g>
+    <rect class="line ol1" x="430" y="292" width="300" height="14" rx="7" fill="#F59E0B" fill-opacity=".85"/>
+    <rect class="line ol2" x="430" y="326" width="360" height="14" rx="7" fill="#F59E0B" fill-opacity=".55"/>
+    <rect class="line ol3" x="430" y="360" width="240" height="14" rx="7" fill="#F59E0B" fill-opacity=".55"/>
+  </g>
+  <!-- col2 cyan -->
+  <g>
+    <rect x="900" y="250" width="440" height="180" rx="14" fill="#0f131a" stroke="#1b212c" stroke-width="2"/>
+    <rect class="ocard" x="900" y="250" width="440" height="180" rx="14" fill="none" stroke="#22D3EE" stroke-width="3.5"/>
+    <g stroke="#22D3EE" stroke-width="2.5" fill="none">
+      <path d="M 1282 282 C 1290 271, 1306 271, 1314 282 C 1306 293, 1290 293, 1282 282 Z"/>
+      <circle cx="1298" cy="282" r="4" fill="#22D3EE" stroke="none"/>
+    </g>
+    <rect class="line ol1" x="930" y="292" width="330" height="14" rx="7" fill="#22D3EE" fill-opacity=".85"/>
+    <rect class="line ol2" x="930" y="326" width="260" height="14" rx="7" fill="#22D3EE" fill-opacity=".55"/>
+    <rect class="line ol3" x="930" y="360" width="350" height="14" rx="7" fill="#22D3EE" fill-opacity=".55"/>
+  </g>
+  <!-- col3 violet -->
+  <g>
+    <rect x="1400" y="250" width="440" height="180" rx="14" fill="#0f131a" stroke="#1b212c" stroke-width="2"/>
+    <rect class="ocard" x="1400" y="250" width="440" height="180" rx="14" fill="none" stroke="#A78BFA" stroke-width="3.5"/>
+    <g stroke="#A78BFA" stroke-width="2.5" fill="none">
+      <path d="M 1782 282 C 1790 271, 1806 271, 1814 282 C 1806 293, 1790 293, 1782 282 Z"/>
+      <circle cx="1798" cy="282" r="4" fill="#A78BFA" stroke="none"/>
+    </g>
+    <rect class="line ol1" x="1430" y="292" width="280" height="14" rx="7" fill="#A78BFA" fill-opacity=".85"/>
+    <rect class="line ol2" x="1430" y="326" width="370" height="14" rx="7" fill="#A78BFA" fill-opacity=".55"/>
+    <rect class="line ol3" x="1430" y="360" width="300" height="14" rx="7" fill="#A78BFA" fill-opacity=".55"/>
+  </g>
+
+  <!-- ================= cross-read arrows (each model reads the others) ================= -->
+  <g stroke-width="2.5" fill="none" stroke-linecap="round">
+    <line class="arrow" pathLength="100" x1="680"  y1="436" x2="1060" y2="550" stroke="#F59E0B"/>
+    <line class="arrow" pathLength="100" x1="560"  y1="436" x2="1560" y2="550" stroke="#F59E0B"/>
+    <line class="arrow" pathLength="100" x1="1060" y1="436" x2="680"  y2="550" stroke="#22D3EE"/>
+    <line class="arrow" pathLength="100" x1="1180" y1="436" x2="1680" y2="550" stroke="#22D3EE"/>
+    <line class="arrow" pathLength="100" x1="1560" y1="436" x2="560"  y2="550" stroke="#A78BFA"/>
+    <line class="arrow" pathLength="100" x1="1680" y1="436" x2="1180" y2="550" stroke="#A78BFA"/>
+  </g>
+  <g class="ahead">
+    <path d="M 1053 544 L 1067 544 L 1060 556 Z" fill="#F59E0B"/>
+    <path d="M 1553 544 L 1567 544 L 1560 556 Z" fill="#F59E0B"/>
+    <path d="M 673 544 L 687 544 L 680 556 Z" fill="#22D3EE"/>
+    <path d="M 1673 544 L 1687 544 L 1680 556 Z" fill="#22D3EE"/>
+    <path d="M 553 544 L 567 544 L 560 556 Z" fill="#A78BFA"/>
+    <path d="M 1173 544 L 1187 544 L 1180 556 Z" fill="#A78BFA"/>
+  </g>
+
+  <!-- ================= REBUTTAL cards (y=560..740) ================= -->
+  <g>
+    <rect x="400" y="560" width="440" height="180" rx="14" fill="#0f131a" stroke="#1b212c" stroke-width="2"/>
+    <rect class="rcard" x="400" y="560" width="440" height="180" rx="14" fill="none" stroke="#F59E0B" stroke-width="3.5"/>
+    <g stroke="#F59E0B" stroke-width="2.5" fill="none">
+      <path d="M 782 592 C 790 581, 806 581, 814 592 C 806 603, 790 603, 782 592 Z"/>
+      <circle cx="798" cy="592" r="4" fill="#F59E0B" stroke="none"/>
+    </g>
+    <rect class="line rl1" x="430" y="602" width="350" height="14" rx="7" fill="#F59E0B" fill-opacity=".85"/>
+    <rect class="line rl2" x="430" y="636" width="250" height="14" rx="7" fill="#F59E0B" fill-opacity=".55"/>
+    <rect class="line rl3" x="430" y="670" width="330" height="14" rx="7" fill="#F59E0B" fill-opacity=".55"/>
+  </g>
+  <g>
+    <rect x="900" y="560" width="440" height="180" rx="14" fill="#0f131a" stroke="#1b212c" stroke-width="2"/>
+    <rect class="rcard" x="900" y="560" width="440" height="180" rx="14" fill="none" stroke="#22D3EE" stroke-width="3.5"/>
+    <g stroke="#22D3EE" stroke-width="2.5" fill="none">
+      <path d="M 1282 592 C 1290 581, 1306 581, 1314 592 C 1306 603, 1290 603, 1282 592 Z"/>
+      <circle cx="1298" cy="592" r="4" fill="#22D3EE" stroke="none"/>
+    </g>
+    <rect class="line rl1" x="930" y="602" width="290" height="14" rx="7" fill="#22D3EE" fill-opacity=".85"/>
+    <rect class="line rl2" x="930" y="636" width="360" height="14" rx="7" fill="#22D3EE" fill-opacity=".55"/>
+    <rect class="line rl3" x="930" y="670" width="240" height="14" rx="7" fill="#22D3EE" fill-opacity=".55"/>
+  </g>
+  <g>
+    <rect x="1400" y="560" width="440" height="180" rx="14" fill="#0f131a" stroke="#1b212c" stroke-width="2"/>
+    <rect class="rcard" x="1400" y="560" width="440" height="180" rx="14" fill="none" stroke="#A78BFA" stroke-width="3.5"/>
+    <g stroke="#A78BFA" stroke-width="2.5" fill="none">
+      <path d="M 1782 592 C 1790 581, 1806 581, 1814 592 C 1806 603, 1790 603, 1782 592 Z"/>
+      <circle cx="1798" cy="592" r="4" fill="#A78BFA" stroke="none"/>
+    </g>
+    <rect class="line rl1" x="1430" y="602" width="340" height="14" rx="7" fill="#A78BFA" fill-opacity=".85"/>
+    <rect class="line rl2" x="1430" y="636" width="280" height="14" rx="7" fill="#A78BFA" fill-opacity=".55"/>
+    <rect class="line rl3" x="1430" y="670" width="360" height="14" rx="7" fill="#A78BFA" fill-opacity=".55"/>
+  </g>
+
+  <!-- ================= CLOSING cards (y=780..960) — equal, no judge ================= -->
+  <g>
+    <rect x="400" y="780" width="440" height="180" rx="14" fill="#0f131a" stroke="#1b212c" stroke-width="2"/>
+    <rect class="ccard" x="400" y="780" width="440" height="180" rx="14" fill="none" stroke="#F59E0B" stroke-width="3.5"/>
+    <g stroke="#F59E0B" stroke-width="2.5" fill="none">
+      <path d="M 782 812 C 790 801, 806 801, 814 812 C 806 823, 790 823, 782 812 Z"/>
+      <circle cx="798" cy="812" r="4" fill="#F59E0B" stroke="none"/>
+    </g>
+    <rect class="line cl1" x="430" y="822" width="320" height="14" rx="7" fill="#F59E0B" fill-opacity=".85"/>
+    <rect class="line cl2" x="430" y="856" width="360" height="14" rx="7" fill="#F59E0B" fill-opacity=".55"/>
+    <rect class="line cl3" x="430" y="890" width="270" height="14" rx="7" fill="#F59E0B" fill-opacity=".55"/>
+  </g>
+  <g>
+    <rect x="900" y="780" width="440" height="180" rx="14" fill="#0f131a" stroke="#1b212c" stroke-width="2"/>
+    <rect class="ccard" x="900" y="780" width="440" height="180" rx="14" fill="none" stroke="#22D3EE" stroke-width="3.5"/>
+    <g stroke="#22D3EE" stroke-width="2.5" fill="none">
+      <path d="M 1282 812 C 1290 801, 1306 801, 1314 812 C 1306 823, 1290 823, 1282 812 Z"/>
+      <circle cx="1298" cy="812" r="4" fill="#22D3EE" stroke="none"/>
+    </g>
+    <rect class="line cl1" x="930" y="822" width="340" height="14" rx="7" fill="#22D3EE" fill-opacity=".85"/>
+    <rect class="line cl2" x="930" y="856" width="250" height="14" rx="7" fill="#22D3EE" fill-opacity=".55"/>
+    <rect class="line cl3" x="930" y="890" width="350" height="14" rx="7" fill="#22D3EE" fill-opacity=".55"/>
+  </g>
+  <g>
+    <rect x="1400" y="780" width="440" height="180" rx="14" fill="#0f131a" stroke="#1b212c" stroke-width="2"/>
+    <rect class="ccard" x="1400" y="780" width="440" height="180" rx="14" fill="none" stroke="#A78BFA" stroke-width="3.5"/>
+    <g stroke="#A78BFA" stroke-width="2.5" fill="none">
+      <path d="M 1782 812 C 1790 801, 1806 801, 1814 812 C 1806 823, 1790 823, 1782 812 Z"/>
+      <circle cx="1798" cy="812" r="4" fill="#A78BFA" stroke="none"/>
+    </g>
+    <rect class="line cl1" x="1430" y="822" width="300" height="14" rx="7" fill="#A78BFA" fill-opacity=".85"/>
+    <rect class="line cl2" x="1430" y="856" width="370" height="14" rx="7" fill="#A78BFA" fill-opacity=".55"/>
+    <rect class="line cl3" x="1430" y="890" width="260" height="14" rx="7" fill="#A78BFA" fill-opacity=".55"/>
+  </g>
+</svg>
