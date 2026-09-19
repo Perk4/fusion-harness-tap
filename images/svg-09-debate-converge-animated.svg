@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <style>
+    :root { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+    text { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+
+    .fade      { animation: dotsFade 9s linear infinite; }
+    .amberMove { animation: amberMove 9s ease-in-out infinite; }
+    .violetMove{ animation: violetMove 9s ease-in-out infinite; }
+
+    .pop   { animation: pop 9s ease-in-out infinite; transform-box: fill-box; transform-origin: center; opacity: 0; }
+    .pulse { animation: travel 9s ease-in-out infinite; opacity: 0; }
+    .phase { animation: phaseLabel 9s ease-in-out infinite; opacity: 0; }
+    .ring  { animation: ringIn 9s ease-in-out infinite; transform-box: fill-box; transform-origin: center; opacity: 0; }
+
+    @keyframes dotsFade {
+      0% { opacity: 0; } 3% { opacity: 1; }
+      95% { opacity: 1; } 98.5% { opacity: 0; } 100% { opacity: 0; }
+    }
+    @keyframes amberMove {
+      0%    { transform: translateX(0); }
+      28%   { transform: translateX(0); }
+      32.5% { transform: translateX(160px); }
+      61%   { transform: translateX(160px); }
+      65.8% { transform: translateX(310px); }
+      87%   { transform: translateX(310px); }
+      91.5% { transform: translateX(460px); }
+      98.6% { transform: translateX(460px); }
+      98.8% { transform: translateX(0); }
+      100%  { transform: translateX(0); }
+    }
+    @keyframes violetMove {
+      0%    { transform: translateX(0); }
+      28%   { transform: translateX(0); }
+      32.5% { transform: translateX(-160px); }
+      61%   { transform: translateX(-160px); }
+      65.8% { transform: translateX(-310px); }
+      87%   { transform: translateX(-310px); }
+      91.5% { transform: translateX(-460px); }
+      98.6% { transform: translateX(-460px); }
+      98.8% { transform: translateX(0); }
+      100%  { transform: translateX(0); }
+    }
+    @keyframes pop {
+      0%   { opacity: 0; transform: scale(0.7); }
+      3%   { opacity: 1; transform: scale(1); }
+      12%  { opacity: 1; transform: scale(1); }
+      15%  { opacity: 0; transform: scale(0.92); }
+      100% { opacity: 0; transform: scale(0.92); }
+    }
+    @keyframes travel {
+      0%    { transform: translateX(0); opacity: 0; }
+      1%    { opacity: 1; }
+      7%    { transform: translateX(var(--dx)); opacity: 1; }
+      8.5%  { transform: translateX(var(--dx)); opacity: 0; }
+      100%  { transform: translateX(var(--dx)); opacity: 0; }
+    }
+    @keyframes phaseLabel {
+      0%   { opacity: 0; transform: translateY(10px); }
+      3%   { opacity: 1; transform: translateY(0); }
+      27%  { opacity: 1; transform: translateY(0); }
+      30%  { opacity: 0; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(0); }
+    }
+    @keyframes ringIn {
+      0%    { opacity: 0; transform: scale(1.6); }
+      89%   { opacity: 0; transform: scale(1.6); }
+      92%   { opacity: 0.9; transform: scale(1.06); }
+      96.5% { opacity: 0.35; transform: scale(1); }
+      98.5% { opacity: 0; transform: scale(1); }
+      100%  { opacity: 0; transform: scale(1); }
+    }
+  </style>
+
+  <defs>
+    <g id="bub">
+      <rect x="-48" y="-29" width="96" height="58" rx="14" fill="#0f131a" stroke="currentColor" stroke-width="3.5"/>
+      <polygon points="-9,27 0,45 9,27" fill="currentColor"/>
+      <circle cx="-16" cy="0" r="4.5" fill="currentColor"/>
+      <circle cx="0"   cy="0" r="4.5" fill="currentColor"/>
+      <circle cx="16"  cy="0" r="4.5" fill="currentColor"/>
+    </g>
+  </defs>
+
+  <!-- background -->
+  <rect width="1920" height="1080" fill="#08090d"/>
+
+  <!-- title -->
+  <text x="80" y="118" font-size="48" font-weight="700" fill="#eef1f6" letter-spacing="2">/fh-debate</text>
+
+  <!-- arena panel -->
+  <rect x="200" y="300" width="1520" height="520" rx="24" fill="#0d1016" stroke="#1b212c" stroke-width="3"/>
+
+  <!-- axis -->
+  <line x1="300" y1="560" x2="1620" y2="560" stroke="#1b212c" stroke-width="3"/>
+  <!-- origin ticks: where positions started -->
+  <line x1="410"  y1="548" x2="410"  y2="572" stroke="#1b212c" stroke-width="3"/>
+  <line x1="960"  y1="548" x2="960"  y2="572" stroke="#1b212c" stroke-width="3"/>
+  <line x1="1510" y1="548" x2="1510" y2="572" stroke="#1b212c" stroke-width="3"/>
+
+  <!-- convergence ring -->
+  <circle class="ring" cx="960" cy="560" r="140" fill="none" stroke="#38bdf8" stroke-width="3"/>
+
+  <!-- traveling argument pulses -->
+  <circle class="pulse" cx="410"  cy="560" r="9" fill="#F59E0B" style="--dx:500px;  animation-delay:-8.45s"/>
+  <circle class="pulse" cx="1510" cy="560" r="9" fill="#A78BFA" style="--dx:-500px; animation-delay:-7.75s"/>
+  <circle class="pulse" cx="570"  cy="560" r="9" fill="#F59E0B" style="--dx:340px;  animation-delay:-5.45s"/>
+  <circle class="pulse" cx="1350" cy="560" r="9" fill="#A78BFA" style="--dx:-340px; animation-delay:-4.75s"/>
+  <circle class="pulse" cx="720"  cy="560" r="9" fill="#F59E0B" style="--dx:190px;  animation-delay:-2.75s"/>
+  <circle class="pulse" cx="1200" cy="560" r="9" fill="#A78BFA" style="--dx:-190px; animation-delay:-2.15s"/>
+
+  <!-- speech bubbles: phase 1 -->
+  <use class="pop" href="#bub" x="410"  y="450" style="color:#F59E0B; animation-delay:-8.7s"/>
+  <use class="pop" href="#bub" x="1510" y="450" style="color:#A78BFA; animation-delay:-8.0s"/>
+  <use class="pop" href="#bub" x="960"  y="450" style="color:#22D3EE; animation-delay:-7.3s"/>
+  <!-- speech bubbles: phase 2 -->
+  <use class="pop" href="#bub" x="570"  y="450" style="color:#F59E0B; animation-delay:-5.7s"/>
+  <use class="pop" href="#bub" x="1350" y="450" style="color:#A78BFA; animation-delay:-5.0s"/>
+  <use class="pop" href="#bub" x="960"  y="450" style="color:#22D3EE; animation-delay:-4.3s"/>
+  <!-- speech bubbles: phase 3 -->
+  <use class="pop" href="#bub" x="720"  y="450" style="color:#F59E0B; animation-delay:-3.0s"/>
+  <use class="pop" href="#bub" x="1200" y="450" style="color:#A78BFA; animation-delay:-2.4s"/>
+  <use class="pop" href="#bub" x="960"  y="450" style="color:#22D3EE; animation-delay:-1.8s"/>
+
+  <!-- position dots -->
+  <g class="fade">
+    <g transform="translate(410,560)">
+      <g class="amberMove">
+        <circle r="26" fill="#F59E0B"/>
+        <text y="9" font-size="22" font-weight="700" fill="#08090d" text-anchor="middle">&#9650;</text>
+      </g>
+    </g>
+    <g transform="translate(960,560)">
+      <circle r="26" fill="#22D3EE"/>
+      <circle r="8" fill="#08090d"/>
+    </g>
+    <g transform="translate(1510,560)">
+      <g class="violetMove">
+        <circle r="26" fill="#A78BFA"/>
+        <text y="9" font-size="22" font-weight="700" fill="#08090d" text-anchor="middle">&#9670;</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- phase labels -->
+  <text class="phase" style="animation-delay:-8.85s" x="960" y="950" font-size="42" font-weight="700" fill="#eef1f6" text-anchor="middle" letter-spacing="8">OPENING</text>
+  <text class="phase" style="animation-delay:-5.85s" x="960" y="950" font-size="42" font-weight="700" fill="#eef1f6" text-anchor="middle" letter-spacing="8">REBUTTAL</text>
+  <text class="phase" style="animation-delay:-2.85s" x="960" y="950" font-size="42" font-weight="700" fill="#eef1f6" text-anchor="middle" letter-spacing="8">CLOSING</text>
+</svg>

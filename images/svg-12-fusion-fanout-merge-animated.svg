@@ -1,0 +1,296 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <style>
+    text {
+      font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+    }
+    .pulseable { transform-box: fill-box; transform-origin: center; }
+
+    /* ---------- prompt ---------- */
+    .promptCore { animation: promptPulse 10s ease-in-out infinite; }
+    @keyframes promptPulse {
+      0%, 100% { transform: scale(1); }
+      2%       { transform: scale(1.16); }
+      7%       { transform: scale(1); }
+    }
+    .promptRing { animation: promptRing 10s ease-out infinite; }
+    @keyframes promptRing {
+      0%        { opacity: .9; transform: scale(1); }
+      9%        { opacity: 0;  transform: scale(2.1); }
+      100%      { opacity: 0;  transform: scale(2.1); }
+    }
+
+    /* ---------- fan-out glow lines ---------- */
+    .fanGlow { animation: fanGlow 10s linear infinite; }
+    @keyframes fanGlow {
+      0%, 3%    { opacity: 0; }
+      7%        { opacity: .85; }
+      14%       { opacity: .85; }
+      18%, 100% { opacity: 0; }
+    }
+
+    /* ---------- traveling prompt dots ---------- */
+    .dotA { animation: dotA 10s ease-in-out infinite; }
+    .dotB { animation: dotB 10s ease-in-out infinite; }
+    .dotC { animation: dotC 10s ease-in-out infinite; }
+    @keyframes dotA {
+      0%, 5%    { opacity: 0; transform: translate(0,0); }
+      7%        { opacity: 1; }
+      13%       { opacity: 1; transform: translate(255px,-290px); }
+      15%, 100% { opacity: 0; transform: translate(255px,-290px); }
+    }
+    @keyframes dotB {
+      0%, 5%    { opacity: 0; transform: translate(0,0); }
+      7%        { opacity: 1; }
+      13%       { opacity: 1; transform: translate(255px,0); }
+      15%, 100% { opacity: 0; transform: translate(255px,0); }
+    }
+    @keyframes dotC {
+      0%, 5%    { opacity: 0; transform: translate(0,0); }
+      7%        { opacity: 1; }
+      13%       { opacity: 1; transform: translate(255px,290px); }
+      15%, 100% { opacity: 0; transform: translate(255px,290px); }
+    }
+
+    /* ---------- model activation glow ---------- */
+    .modelGlow { animation: modelGlow 10s ease-in-out infinite; }
+    @keyframes modelGlow {
+      0%, 12%   { opacity: 0; }
+      16%       { opacity: 1; }
+      26%       { opacity: 0; }
+      100%      { opacity: 0; }
+    }
+
+    /* ---------- answer cards traveling to fusion ---------- */
+    .cardA { animation: cardA 10s ease-in-out infinite; }
+    .cardB { animation: cardB 10s ease-in-out infinite; }
+    .cardC { animation: cardC 10s ease-in-out infinite; }
+    @keyframes cardA {
+      0%, 15%   { opacity: 0; transform: translate(0,0); }
+      18%, 22%  { opacity: 1; transform: translate(0,0); }
+      36%       { opacity: 1; transform: translate(430px,290px); }
+      39%, 100% { opacity: 0; transform: translate(430px,290px); }
+    }
+    @keyframes cardB {
+      0%, 15%   { opacity: 0; transform: translate(0,0); }
+      18%, 22%  { opacity: 1; transform: translate(0,0); }
+      36%       { opacity: 1; transform: translate(430px,0); }
+      39%, 100% { opacity: 0; transform: translate(430px,0); }
+    }
+    @keyframes cardC {
+      0%, 15%   { opacity: 0; transform: translate(0,0); }
+      18%, 22%  { opacity: 1; transform: translate(0,0); }
+      36%       { opacity: 1; transform: translate(430px,-290px); }
+      39%, 100% { opacity: 0; transform: translate(430px,-290px); }
+    }
+
+    /* ---------- fusion node activity ---------- */
+    .fusionGlow { animation: fusionGlow 10s ease-in-out infinite; }
+    @keyframes fusionGlow {
+      0%, 34%   { opacity: 0; }
+      40%       { opacity: 1; }
+      46%       { opacity: .45; }
+      52%       { opacity: 1; }
+      58%       { opacity: .8; }
+      66%, 100% { opacity: 0; }
+    }
+    .penPop { animation: penPop 10s ease-in-out infinite; }
+    @keyframes penPop {
+      0%, 38%   { transform: scale(1); }
+      44%       { transform: scale(1.3); }
+      52%       { transform: scale(1); }
+      100%      { transform: scale(1); }
+    }
+
+    /* ---------- fused result card ---------- */
+    .fusedCard { animation: fusedCard 10s ease-out infinite; }
+    @keyframes fusedCard {
+      0%, 52%   { opacity: 0; transform: translate(-46px,0); }
+      58%       { opacity: 1; transform: translate(0,0); }
+      94%       { opacity: 1; transform: translate(0,0); }
+      99%, 100% { opacity: 0; transform: translate(0,0); }
+    }
+    .fusedDot { animation: fusedDot 10s ease-in-out infinite; }
+    @keyframes fusedDot {
+      0%, 50%   { opacity: 0; transform: translate(0,0); }
+      52%       { opacity: 1; }
+      57%       { opacity: 1; transform: translate(155px,0); }
+      58%, 100% { opacity: 0; transform: translate(155px,0); }
+    }
+
+    /* ---------- sync-back dashed arrows ---------- */
+    .syncPath { animation: syncPath 10s linear infinite; }
+    @keyframes syncPath {
+      0%, 60%   { opacity: 0; stroke-dashoffset: 0; }
+      63%       { opacity: 1; }
+      85%       { opacity: 1; }
+      90%, 100% { opacity: 0; stroke-dashoffset: -273; }
+    }
+    .syncTip { animation: syncTip 10s linear infinite; }
+    @keyframes syncTip {
+      0%, 62%   { opacity: 0; }
+      66%       { opacity: 1; }
+      85%       { opacity: 1; }
+      90%, 100% { opacity: 0; }
+    }
+
+    /* ---------- ACK chips ---------- */
+    .ack1 { animation: ack1 10s ease-out infinite; }
+    .ack2 { animation: ack2 10s ease-out infinite; }
+    .ack3 { animation: ack3 10s ease-out infinite; }
+    @keyframes ack1 {
+      0%, 70%   { opacity: 0; transform: scale(.6); }
+      73%       { opacity: 1; transform: scale(1.15); }
+      75%       { opacity: 1; transform: scale(1); }
+      93%       { opacity: 1; transform: scale(1); }
+      98%, 100% { opacity: 0; transform: scale(1); }
+    }
+    @keyframes ack2 {
+      0%, 74%   { opacity: 0; transform: scale(.6); }
+      77%       { opacity: 1; transform: scale(1.15); }
+      79%       { opacity: 1; transform: scale(1); }
+      93%       { opacity: 1; transform: scale(1); }
+      98%, 100% { opacity: 0; transform: scale(1); }
+    }
+    @keyframes ack3 {
+      0%, 78%   { opacity: 0; transform: scale(.6); }
+      81%       { opacity: 1; transform: scale(1.15); }
+      83%       { opacity: 1; transform: scale(1); }
+      93%       { opacity: 1; transform: scale(1); }
+      98%, 100% { opacity: 0; transform: scale(1); }
+    }
+  </style>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1920" height="1080" fill="#08090d"/>
+
+  <!-- title -->
+  <text x="80" y="122" font-size="54" font-weight="700" fill="#eef1f6">/fh-fusion</text>
+
+  <!-- ======== static wiring ======== -->
+  <!-- fan-out lines: prompt -> models -->
+  <line x1="302" y1="540" x2="563" y2="250" stroke="#1b212c" stroke-width="3"/>
+  <line x1="302" y1="540" x2="563" y2="540" stroke="#1b212c" stroke-width="3"/>
+  <line x1="302" y1="540" x2="563" y2="830" stroke="#1b212c" stroke-width="3"/>
+  <!-- glow overlays -->
+  <line class="fanGlow" x1="302" y1="540" x2="563" y2="250" stroke="#eef1f6" stroke-width="3"/>
+  <line class="fanGlow" x1="302" y1="540" x2="563" y2="540" stroke="#eef1f6" stroke-width="3"/>
+  <line class="fanGlow" x1="302" y1="540" x2="563" y2="830" stroke="#eef1f6" stroke-width="3"/>
+
+  <!-- answer lines: models -> fusion -->
+  <line x1="757" y1="250" x2="1126" y2="537" stroke="#1b212c" stroke-width="3"/>
+  <line x1="757" y1="540" x2="1126" y2="540" stroke="#1b212c" stroke-width="3"/>
+  <line x1="757" y1="830" x2="1126" y2="543" stroke="#1b212c" stroke-width="3"/>
+
+  <!-- fusion -> fused card line -->
+  <line x1="1354" y1="540" x2="1508" y2="540" stroke="#1b212c" stroke-width="3"/>
+
+  <!-- ======== prompt node ======== -->
+  <circle class="promptRing pulseable" cx="250" cy="540" r="46" fill="none" stroke="#eef1f6" stroke-width="3"/>
+  <circle class="promptCore pulseable" cx="250" cy="540" r="46" fill="#eef1f6"/>
+  <text x="250" y="632" font-size="24" font-weight="700" fill="#eef1f6" text-anchor="middle">PROMPT</text>
+
+  <!-- ======== model nodes ======== -->
+  <!-- sol : amber, MAIN builder glyph but read-only slot -->
+  <g>
+    <rect x="565" y="185" width="190" height="130" rx="16" fill="#0d1016" stroke="#F59E0B" stroke-width="3.5"/>
+    <rect class="modelGlow" x="565" y="185" width="190" height="130" rx="16" fill="none" stroke="#F59E0B" stroke-width="7"/>
+    <text x="648" y="262" font-size="30" font-weight="700" fill="#F59E0B" text-anchor="middle">▲ sol</text>
+    <!-- lock: read-only -->
+    <g stroke="#F59E0B" stroke-width="3" fill="none">
+      <rect x="714" y="207" width="20" height="15" rx="3"/>
+      <path d="M718 207 v-5 a6 6 0 0 1 12 0 v5"/>
+    </g>
+  </g>
+
+  <!-- terra : cyan -->
+  <g>
+    <rect x="565" y="475" width="190" height="130" rx="16" fill="#0d1016" stroke="#22D3EE" stroke-width="3.5"/>
+    <rect class="modelGlow" x="565" y="475" width="190" height="130" rx="16" fill="none" stroke="#22D3EE" stroke-width="7"/>
+    <text x="648" y="552" font-size="30" font-weight="700" fill="#22D3EE" text-anchor="middle">● terra</text>
+    <g stroke="#22D3EE" stroke-width="3" fill="none">
+      <rect x="714" y="497" width="20" height="15" rx="3"/>
+      <path d="M718 497 v-5 a6 6 0 0 1 12 0 v5"/>
+    </g>
+  </g>
+
+  <!-- fable : violet, ARCHITECT glyph -->
+  <g>
+    <rect x="565" y="765" width="190" height="130" rx="16" fill="#0d1016" stroke="#A78BFA" stroke-width="3.5"/>
+    <rect class="modelGlow" x="565" y="765" width="190" height="130" rx="16" fill="none" stroke="#A78BFA" stroke-width="7"/>
+    <text x="648" y="842" font-size="30" font-weight="700" fill="#A78BFA" text-anchor="middle">◆ fable</text>
+    <g stroke="#A78BFA" stroke-width="3" fill="none">
+      <rect x="714" y="787" width="20" height="15" rx="3"/>
+      <path d="M718 787 v-5 a6 6 0 0 1 12 0 v5"/>
+    </g>
+  </g>
+
+  <!-- ======== fusion node ======== -->
+  <g>
+    <rect x="1128" y="455" width="224" height="170" rx="18" fill="#0f131a" stroke="#38bdf8" stroke-width="3.5"/>
+    <rect class="fusionGlow" x="1128" y="455" width="224" height="170" rx="18" fill="#38bdf8" fill-opacity="0.16" stroke="#38bdf8" stroke-width="9"/>
+    <!-- pen glyph : the single writer -->
+    <g transform="translate(1240,506)">
+      <g class="penPop pulseable">
+        <g transform="rotate(-45)" fill="#38bdf8">
+          <rect x="-7" y="-26" width="14" height="34" rx="3"/>
+          <path d="M-7 10 L0 24 L7 10 Z"/>
+        </g>
+      </g>
+    </g>
+    <text x="1240" y="592" font-size="28" font-weight="700" fill="#eef1f6" text-anchor="middle">FUSION</text>
+  </g>
+
+  <!-- ======== traveling prompt dots ======== -->
+  <circle class="dotA" cx="305" cy="540" r="9" fill="#eef1f6"/>
+  <circle class="dotB" cx="305" cy="540" r="9" fill="#eef1f6"/>
+  <circle class="dotC" cx="305" cy="540" r="9" fill="#eef1f6"/>
+
+  <!-- ======== answer cards ======== -->
+  <g class="cardA">
+    <rect x="762" y="220" width="96" height="60" rx="10" fill="#0f131a" stroke="#F59E0B" stroke-width="3"/>
+    <text x="810" y="261" font-size="30" font-weight="700" fill="#F59E0B" text-anchor="middle">▲</text>
+  </g>
+  <g class="cardB">
+    <rect x="762" y="510" width="96" height="60" rx="10" fill="#0f131a" stroke="#22D3EE" stroke-width="3"/>
+    <text x="810" y="551" font-size="30" font-weight="700" fill="#22D3EE" text-anchor="middle">●</text>
+  </g>
+  <g class="cardC">
+    <rect x="762" y="800" width="96" height="60" rx="10" fill="#0f131a" stroke="#A78BFA" stroke-width="3"/>
+    <text x="810" y="841" font-size="30" font-weight="700" fill="#A78BFA" text-anchor="middle">◆</text>
+  </g>
+
+  <!-- ======== fused result card ======== -->
+  <circle class="fusedDot" cx="1358" cy="540" r="9" fill="#38bdf8"/>
+  <g class="fusedCard">
+    <rect x="1510" y="475" width="220" height="130" rx="16" fill="#0f131a" stroke="#eef1f6" stroke-width="3.5"/>
+    <text x="1620" y="552" font-size="30" font-weight="700" fill="#eef1f6" text-anchor="middle">FUSED</text>
+  </g>
+
+  <!-- ======== sync-back dashed arrows (fusion context -> models) ======== -->
+  <path class="syncPath" d="M1240 448 C 1180 240, 960 180, 782 244" fill="none"
+        stroke="#38bdf8" stroke-width="3.5" stroke-dasharray="12 9"/>
+  <path class="syncPath" d="M1128 585 C 1010 665, 880 650, 775 588" fill="none"
+        stroke="#38bdf8" stroke-width="3.5" stroke-dasharray="12 9"/>
+  <path class="syncPath" d="M1240 632 C 1180 840, 960 900, 782 836" fill="none"
+        stroke="#38bdf8" stroke-width="3.5" stroke-dasharray="12 9"/>
+  <!-- arrow tips at the model ends -->
+  <g class="syncTip" fill="#38bdf8">
+    <path transform="translate(782,244) rotate(160)" d="M0 0 L-16 -7 L-16 7 Z"/>
+    <path transform="translate(775,588) rotate(-150)" d="M0 0 L-16 -7 L-16 7 Z"/>
+    <path transform="translate(782,836) rotate(-160)" d="M0 0 L-16 -7 L-16 7 Z"/>
+  </g>
+
+  <!-- ======== ACK chips ======== -->
+  <g class="ack1 pulseable">
+    <rect x="622" y="132" width="76" height="38" rx="10" fill="#0d1016" stroke="#3FBF6F" stroke-width="3"/>
+    <text x="660" y="159" font-size="20" font-weight="700" fill="#3FBF6F" text-anchor="middle">ACK</text>
+  </g>
+  <g class="ack2 pulseable">
+    <rect x="622" y="422" width="76" height="38" rx="10" fill="#0d1016" stroke="#3FBF6F" stroke-width="3"/>
+    <text x="660" y="449" font-size="20" font-weight="700" fill="#3FBF6F" text-anchor="middle">ACK</text>
+  </g>
+  <g class="ack3 pulseable">
+    <rect x="622" y="712" width="76" height="38" rx="10" fill="#0d1016" stroke="#3FBF6F" stroke-width="3"/>
+    <text x="660" y="739" font-size="20" font-weight="700" fill="#3FBF6F" text-anchor="middle">ACK</text>
+  </g>
+</svg>

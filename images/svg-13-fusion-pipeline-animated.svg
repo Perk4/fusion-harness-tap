@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" font-family='ui-monospace, &quot;SF Mono&quot;, Menlo, monospace'>
+  <style>
+    .pop, .ring { transform-box: fill-box; transform-origin: center; }
+
+    .tok0 { animation: tok0 8s linear infinite; }
+    @keyframes tok0 {
+      0%       { transform: translate(130px, 620px); opacity: 0; }
+      3%       { opacity: 1; }
+      10%      { transform: translate(340px, 620px); opacity: 1; }
+      13%,100% { transform: translate(365px, 620px); opacity: 0; }
+    }
+
+    .tokV { animation: tokV 8s linear infinite; }
+    @keyframes tokV {
+      0%,10%   { transform: translate(340px, 620px); opacity: 0; }
+      14%      { transform: translate(440px, 480px); opacity: 1; }
+      34%      { transform: translate(870px, 480px); opacity: 1; }
+      41%      { transform: translate(960px, 620px); opacity: 1; }
+      44%,100% { transform: translate(960px, 620px); opacity: 0; }
+    }
+    .tokM { animation: tokM 8s linear infinite; }
+    @keyframes tokM {
+      0%,10%   { transform: translate(340px, 620px); opacity: 0; }
+      14%      { transform: translate(440px, 620px); opacity: 1; }
+      34%      { transform: translate(870px, 620px); opacity: 1; }
+      41%      { transform: translate(960px, 620px); opacity: 1; }
+      44%,100% { transform: translate(960px, 620px); opacity: 0; }
+    }
+    .tokC { animation: tokC 8s linear infinite; }
+    @keyframes tokC {
+      0%,10%   { transform: translate(340px, 620px); opacity: 0; }
+      14%      { transform: translate(440px, 760px); opacity: 1; }
+      34%      { transform: translate(870px, 760px); opacity: 1; }
+      41%      { transform: translate(960px, 620px); opacity: 1; }
+      44%,100% { transform: translate(960px, 620px); opacity: 0; }
+    }
+
+    .tokW { animation: tokW 8s linear infinite; }
+    @keyframes tokW {
+      0%,41%   { transform: translate(960px, 620px); opacity: 0; }
+      44%      { transform: translate(1000px, 620px); opacity: 1; }
+      57%      { transform: translate(1270px, 620px); opacity: 1; }
+      71%      { transform: translate(1580px, 620px); opacity: 1; }
+      74%,100% { transform: translate(1580px, 620px); opacity: 0; }
+    }
+
+    .ringA { animation: ringA 8s linear infinite; }
+    @keyframes ringA {
+      0%,20%   { transform: scale(0.2); opacity: 0; }
+      23%      { opacity: 0.9; }
+      30%,100% { transform: scale(1.9); opacity: 0; }
+    }
+    .ringB { animation: ringB 8s linear infinite; }
+    @keyframes ringB {
+      0%,22%   { transform: scale(0.2); opacity: 0; }
+      25%      { opacity: 0.9; }
+      32%,100% { transform: scale(1.9); opacity: 0; }
+    }
+    .ringC { animation: ringC 8s linear infinite; }
+    @keyframes ringC {
+      0%,24%   { transform: scale(0.2); opacity: 0; }
+      27%      { opacity: 0.9; }
+      34%,100% { transform: scale(1.9); opacity: 0; }
+    }
+
+    .ghoV { animation: ghoV 8s linear infinite; }
+    @keyframes ghoV {
+      0%,58%   { transform: translate(1270px, 620px); opacity: 0; }
+      63%      { transform: translate(1150px, 480px); opacity: 0.9; }
+      82%,100% { transform: translate(540px, 480px); opacity: 0; }
+    }
+    .ghoM { animation: ghoM 8s linear infinite; }
+    @keyframes ghoM {
+      0%,58%   { transform: translate(1270px, 620px); opacity: 0; }
+      63%      { transform: translate(1150px, 620px); opacity: 0.9; }
+      82%,100% { transform: translate(540px, 620px); opacity: 0; }
+    }
+    .ghoC { animation: ghoC 8s linear infinite; }
+    @keyframes ghoC {
+      0%,58%   { transform: translate(1270px, 620px); opacity: 0; }
+      63%      { transform: translate(1150px, 760px); opacity: 0.9; }
+      82%,100% { transform: translate(540px, 760px); opacity: 0; }
+    }
+
+    .chk1 { animation: chk1 8s linear infinite; }
+    @keyframes chk1 {
+      0%,72%   { transform: scale(0); opacity: 0; }
+      76%      { transform: scale(1.3); opacity: 1; }
+      79%      { transform: scale(1); opacity: 1; }
+      94%      { transform: scale(1); opacity: 1; }
+      99%,100% { transform: scale(1); opacity: 0; }
+    }
+    .chk2 { animation: chk2 8s linear infinite; }
+    @keyframes chk2 {
+      0%,75%   { transform: scale(0); opacity: 0; }
+      79%      { transform: scale(1.3); opacity: 1; }
+      82%      { transform: scale(1); opacity: 1; }
+      94%      { transform: scale(1); opacity: 1; }
+      99%,100% { transform: scale(1); opacity: 0; }
+    }
+    .chk3 { animation: chk3 8s linear infinite; }
+    @keyframes chk3 {
+      0%,78%   { transform: scale(0); opacity: 0; }
+      82%      { transform: scale(1.3); opacity: 1; }
+      85%      { transform: scale(1); opacity: 1; }
+      94%      { transform: scale(1); opacity: 1; }
+      99%,100% { transform: scale(1); opacity: 0; }
+    }
+
+    .chipFan { animation: chipFan 8s linear infinite; }
+    @keyframes chipFan { 0%,5%{opacity:0} 9%,14%{opacity:1} 20%,100%{opacity:0} }
+    .chipPro { animation: chipPro 8s linear infinite; }
+    @keyframes chipPro { 0%,17%{opacity:0} 21%,32%{opacity:1} 38%,100%{opacity:0} }
+    .chipMer { animation: chipMer 8s linear infinite; }
+    @keyframes chipMer { 0%,38%{opacity:0} 42%,50%{opacity:1} 56%,100%{opacity:0} }
+    .chipSyn { animation: chipSyn 8s linear infinite; }
+    @keyframes chipSyn { 0%,55%{opacity:0} 59%,68%{opacity:1} 74%,100%{opacity:0} }
+    .chipAck { animation: chipAck 8s linear infinite; }
+    @keyframes chipAck { 0%,71%{opacity:0} 75%,93%{opacity:1} 99%,100%{opacity:0} }
+
+    .gate { animation: gate 8s linear infinite; }
+    @keyframes gate { 0%,45%{opacity:0} 49%,54%{opacity:1} 60%,100%{opacity:0} }
+  </style>
+
+  <!-- background -->
+  <rect width="1920" height="1080" fill="#08090d"/>
+
+  <!-- title -->
+  <text x="80" y="130" font-size="56" font-weight="700" fill="#eef1f6">/fh-fusion</text>
+
+  <!-- flow panel -->
+  <rect x="120" y="380" width="1680" height="520" rx="24" fill="#0d1016" stroke="#1b212c" stroke-width="3"/>
+
+  <!-- model lanes -->
+  <line x1="250" y1="480" x2="1670" y2="480" stroke="#1b212c" stroke-width="2"/>
+  <line x1="250" y1="620" x2="1670" y2="620" stroke="#1b212c" stroke-width="2"/>
+  <line x1="250" y1="760" x2="1670" y2="760" stroke="#1b212c" stroke-width="2"/>
+
+  <!-- lane model glyphs -->
+  <text x="205" y="492" font-size="32" text-anchor="middle" fill="#A78BFA">&#9670;</text>
+  <text x="205" y="632" font-size="32" text-anchor="middle" fill="#F59E0B">&#9650;</text>
+  <text x="205" y="772" font-size="32" text-anchor="middle" fill="#22D3EE">&#9679;</text>
+
+  <!-- dashed connectors from chips down to flow -->
+  <g stroke="#1b212c" stroke-width="2" stroke-dasharray="4 10">
+    <line x1="340"  y1="330" x2="340"  y2="440"/>
+    <line x1="650"  y1="330" x2="650"  y2="440"/>
+    <line x1="960"  y1="330" x2="960"  y2="440"/>
+    <line x1="1270" y1="330" x2="1270" y2="440"/>
+    <line x1="1580" y1="330" x2="1580" y2="440"/>
+  </g>
+
+  <!-- stage chips -->
+  <g>
+    <rect x="220" y="245" width="240" height="70" rx="16" fill="#0f131a" stroke="#1b212c" stroke-width="3"/>
+    <rect x="530" y="245" width="240" height="70" rx="16" fill="#0f131a" stroke="#1b212c" stroke-width="3"/>
+    <rect x="840" y="245" width="240" height="70" rx="16" fill="#0f131a" stroke="#1b212c" stroke-width="3"/>
+    <rect x="1150" y="245" width="240" height="70" rx="16" fill="#0f131a" stroke="#1b212c" stroke-width="3"/>
+    <rect x="1460" y="245" width="240" height="70" rx="16" fill="#0f131a" stroke="#1b212c" stroke-width="3"/>
+
+    <!-- active overlays -->
+    <rect class="chipFan" x="220" y="245" width="240" height="70" rx="16" fill="#38bdf8" fill-opacity="0.10" stroke="#38bdf8" stroke-width="4"/>
+    <rect class="chipPro" x="530" y="245" width="240" height="70" rx="16" fill="#38bdf8" fill-opacity="0.10" stroke="#38bdf8" stroke-width="4"/>
+    <rect class="chipMer" x="840" y="245" width="240" height="70" rx="16" fill="#38bdf8" fill-opacity="0.10" stroke="#38bdf8" stroke-width="4"/>
+    <rect class="chipSyn" x="1150" y="245" width="240" height="70" rx="16" fill="#38bdf8" fill-opacity="0.10" stroke="#38bdf8" stroke-width="4"/>
+    <rect class="chipAck" x="1460" y="245" width="240" height="70" rx="16" fill="#3FBF6F" fill-opacity="0.12" stroke="#3FBF6F" stroke-width="4"/>
+
+    <text x="340"  y="290" font-size="28" font-weight="700" text-anchor="middle" fill="#eef1f6" letter-spacing="2">FAN OUT</text>
+    <text x="650"  y="290" font-size="28" font-weight="700" text-anchor="middle" fill="#eef1f6" letter-spacing="2">PROPOSE</text>
+    <text x="960"  y="290" font-size="28" font-weight="700" text-anchor="middle" fill="#eef1f6" letter-spacing="2">MERGE</text>
+    <text x="1270" y="290" font-size="28" font-weight="700" text-anchor="middle" fill="#eef1f6" letter-spacing="2">SYNC</text>
+    <text x="1580" y="290" font-size="28" font-weight="700" text-anchor="middle" fill="#3FBF6F" letter-spacing="2">ACK</text>
+
+    <!-- arrows between chips -->
+    <text x="495"  y="292" font-size="34" font-weight="700" text-anchor="middle" fill="#38bdf8">&#8250;</text>
+    <text x="805"  y="292" font-size="34" font-weight="700" text-anchor="middle" fill="#38bdf8">&#8250;</text>
+    <text x="1115" y="292" font-size="34" font-weight="700" text-anchor="middle" fill="#38bdf8">&#8250;</text>
+    <text x="1425" y="292" font-size="34" font-weight="700" text-anchor="middle" fill="#38bdf8">&#8250;</text>
+  </g>
+
+  <!-- one-writer gate between MERGE and SYNC -->
+  <g>
+    <rect x="1075" y="530" width="80" height="180" rx="18" fill="#0f131a" stroke="#1b212c" stroke-width="3"/>
+    <rect class="gate" x="1075" y="530" width="80" height="180" rx="18" fill="none" stroke="#38bdf8" stroke-width="4"/>
+    <!-- pen glyph (one writer) -->
+    <g transform="translate(1115,566) rotate(45)">
+      <rect x="-5" y="-18" width="10" height="24" rx="3" fill="#eef1f6"/>
+      <polygon points="-5,6 5,6 0,16" fill="#eef1f6"/>
+    </g>
+  </g>
+
+  <!-- propose pulse rings -->
+  <g transform="translate(650,480)"><circle class="ring ringA" r="30" fill="none" stroke="#A78BFA" stroke-width="4"/></g>
+  <g transform="translate(650,620)"><circle class="ring ringB" r="30" fill="none" stroke="#F59E0B" stroke-width="4"/></g>
+  <g transform="translate(650,760)"><circle class="ring ringC" r="30" fill="none" stroke="#22D3EE" stroke-width="4"/></g>
+
+  <!-- single incoming token -->
+  <g class="tok0">
+    <circle r="24" fill="#eef1f6" opacity="0.25"/>
+    <circle r="13" fill="#eef1f6"/>
+  </g>
+
+  <!-- fan-out colored tokens -->
+  <g class="tokV">
+    <circle r="24" fill="#A78BFA" opacity="0.25"/>
+    <circle r="13" fill="#A78BFA"/>
+  </g>
+  <g class="tokM">
+    <circle r="24" fill="#F59E0B" opacity="0.25"/>
+    <circle r="13" fill="#F59E0B"/>
+  </g>
+  <g class="tokC">
+    <circle r="24" fill="#22D3EE" opacity="0.25"/>
+    <circle r="13" fill="#22D3EE"/>
+  </g>
+
+  <!-- merged white token -->
+  <g class="tokW">
+    <circle r="26" fill="#eef1f6" opacity="0.25"/>
+    <circle r="14" fill="#eef1f6"/>
+  </g>
+
+  <!-- sync ghost tokens (dashed, back to model lanes) -->
+  <g class="ghoV"><circle r="15" fill="none" stroke="#A78BFA" stroke-width="3" stroke-dasharray="6 6"/></g>
+  <g class="ghoM"><circle r="15" fill="none" stroke="#F59E0B" stroke-width="3" stroke-dasharray="6 6"/></g>
+  <g class="ghoC"><circle r="15" fill="none" stroke="#22D3EE" stroke-width="3" stroke-dasharray="6 6"/></g>
+
+  <!-- ack green checks -->
+  <g transform="translate(1580,480)"><g class="pop chk1"><path d="M -16 2 L -4 14 L 18 -14" fill="none" stroke="#3FBF6F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+  <g transform="translate(1580,620)"><g class="pop chk2"><path d="M -16 2 L -4 14 L 18 -14" fill="none" stroke="#3FBF6F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+  <g transform="translate(1580,760)"><g class="pop chk3"><path d="M -16 2 L -4 14 L 18 -14" fill="none" stroke="#3FBF6F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+</svg>

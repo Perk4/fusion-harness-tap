@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 380" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" role="img" aria-label="The Pi host runs on the builder model and slash commands fork it; the architect stays a separate persistent brain pinned per project and per model">
+  <rect x="0" y="0" width="840" height="380" rx="14" fill="#0d1117"/>
+  <rect x="0.75" y="0.75" width="838.5" height="378.5" rx="13.5" fill="none" stroke="#30363d" stroke-width="1.5"/>
+
+  <text x="420" y="40" text-anchor="middle" fill="#e6edf3" font-size="16" font-weight="700" letter-spacing="2">RAW CHAT IS THE BUILDER</text>
+
+  <!-- host panel -->
+  <g>
+    <rect x="40" y="66" width="440" height="128" rx="10" fill="#161b22" stroke="#f0b429" stroke-width="1.5"/>
+    <text x="62" y="96" fill="#f0b429" font-size="14" font-weight="700">&#9650; PI HOST &#183; BUILDER MODEL</text>
+    <text x="62" y="118" fill="#8b949e" font-size="11">openai/gpt-5.6-sol &#183; your skills &amp; context load here</text>
+    <rect x="62" y="132" width="396" height="44" rx="7" fill="#0d1117" stroke="#30363d"/>
+    <text x="76" y="152" fill="#e6edf3" font-size="11">&gt; plain messages = the untouched native pi experience</text>
+    <text x="76" y="168" fill="#8b949e" font-size="11">raw chat and slash commands are the same agent</text>
+  </g>
+
+  <!-- fork arrows -->
+  <path d="M170,194 C170,224 150,232 144,252" fill="none" stroke="#f0b429" stroke-width="1.75"/>
+  <path d="M144,252 l-2,-8 l7,3 z" fill="#f0b429"/>
+  <path d="M350,194 C350,224 370,232 376,252" fill="none" stroke="#f0b429" stroke-width="1.75"/>
+  <path d="M376,252 l-5,-6 l8,-1 z" fill="#f0b429"/>
+  <text x="260" y="232" text-anchor="middle" fill="#f0b429" font-size="11" font-weight="700">fork</text>
+
+  <!-- builder children -->
+  <g>
+    <rect x="52" y="254" width="180" height="72" rx="9" fill="#0d1117" stroke="#f0b429" stroke-width="1.25"/>
+    <text x="142" y="280" text-anchor="middle" fill="#f0b429" font-size="12" font-weight="700">&#9650; builder child</text>
+    <text x="142" y="298" text-anchor="middle" fill="#8b949e" font-size="10">inherits raw chat + panels</text>
+    <text x="142" y="313" text-anchor="middle" fill="#8b949e" font-size="10">clean-room spawn</text>
+  </g>
+  <g>
+    <rect x="288" y="254" width="180" height="72" rx="9" fill="#0d1117" stroke="#f0b429" stroke-width="1.25"/>
+    <text x="378" y="280" text-anchor="middle" fill="#f0b429" font-size="12" font-weight="700">&#9650; builder child</text>
+    <text x="378" y="298" text-anchor="middle" fill="#8b949e" font-size="10">auto-validate rounds</text>
+    <text x="378" y="313" text-anchor="middle" fill="#8b949e" font-size="10">resume the same fork</text>
+  </g>
+
+  <!-- divider -->
+  <line x1="520" y1="60" x2="520" y2="336" stroke="#30363d" stroke-width="1.5" stroke-dasharray="4 6"/>
+
+  <!-- architect brain -->
+  <g>
+    <rect x="556" y="66" width="244" height="260" rx="10" fill="#161b22" stroke="#a78bfa" stroke-width="1.5"/>
+    <text x="678" y="98" text-anchor="middle" fill="#a78bfa" font-size="14" font-weight="700">&#9670; ARCHITECT</text>
+    <text x="678" y="120" text-anchor="middle" fill="#8b949e" font-size="11">anthropic/claude-fable-5</text>
+
+    <rect x="576" y="138" width="204" height="94" rx="7" fill="#0d1117" stroke="#30363d"/>
+    <text x="678" y="162" text-anchor="middle" fill="#e6edf3" font-size="11">separate persistent brain</text>
+    <text x="678" y="182" text-anchor="middle" fill="#8b949e" font-size="10">pinned per project + per model</text>
+    <text x="678" y="200" text-anchor="middle" fill="#8b949e" font-size="10">/tmp/fusion-harness-sessions/</text>
+    <text x="678" y="218" text-anchor="middle" fill="#8b949e" font-size="10">restart-proof &#183; /fh-reset wipes</text>
+
+    <text x="678" y="264" text-anchor="middle" fill="#e6edf3" font-size="11">never forks the host:</text>
+    <text x="678" y="284" text-anchor="middle" fill="#8b949e" font-size="10">an architect that inherited every</text>
+    <text x="678" y="300" text-anchor="middle" fill="#8b949e" font-size="10">builder assumption is just an echo</text>
+  </g>
+
+  <text x="420" y="360" text-anchor="middle" fill="#8b949e" font-size="12">two independent perspectives is the point of fusion</text>
+</svg>
